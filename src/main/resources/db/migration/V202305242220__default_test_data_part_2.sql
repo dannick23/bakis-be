@@ -1,0 +1,2 @@
+INSERT INTO `settings`(`default_iteration`, `send_sms_to_client`) VALUES (30,0);
+INSERT INTO `systems`(`settings_id`, `name`, `description`, `address`) VALUES (2,'test-two','test-two-description', 'test-two-address');
