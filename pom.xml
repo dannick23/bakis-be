@@ -11,7 +11,7 @@
 	<groupId>com.example</groupId>
 	<artifactId>bakis</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<name>bakis</name>
 	<description>Bakio darbas</description>
 	<properties>
