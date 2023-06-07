@@ -21,7 +21,7 @@ spring:
     database-platform: org.hibernate.dialect.MySQL8Dialect
     show-sql: true
   datasource:
-    url: jdbc:mysql://${DB_HOST}:3306/${DB_NAME}
+    url: jdbc:mysql://${DB_HOST}:3306/${DB_NAME}}
     driver-class-name: com.mysql.jdbc.Driver
     username: ${DB_USERNAME}
     password: ${DB_PASSWORD}
