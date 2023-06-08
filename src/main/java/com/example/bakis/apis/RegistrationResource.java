@@ -13,6 +13,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "https://bakis-fe.herokuapp.com/")
 @RequestMapping("registration/")
 @RequiredArgsConstructor
 public class RegistrationResource {
