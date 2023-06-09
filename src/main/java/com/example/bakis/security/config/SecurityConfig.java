@@ -20,23 +20,8 @@ import java.util.Arrays;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
-    private static final String[] permittedEndpoints = {
-            "/error",
-            "/user/{system-name}/login",
-            "/user/{system-name}/new",
-            "/v3/api-docs/**",
-            "/swagger-ui/**",
-            "/system/{system-name}/get-settings",
-            "/system/{system-name}/get-image/{image-id}",
-            "/system/{system-name}/get-description",
-            "/system/{system-name}/get-all-images",
-            "/system/{system-name}/get-about-us",
-            "/system/{system-name}/all-workers",
-            "/registration/{system-name}/worker-shift/{user-email}",
-            "/registration/{system-name}/worker-booked-shift/{user-email}",
-            "/registration/{system-name}/all-registrations/{user-email}",
-            "/registration/{system-name}/all-registrations/{user-email}/{day}",
-            "/system/{system-name}/get-contact-us"
+    private static final String[] authenticatedEndpoints = {
+        "/registration/{system}/new"
     };
     private static final String[] adminEndpoints = {
             "/user/{system-name}/confirm-worker/{user-email}",
@@ -70,10 +55,10 @@ public class SecurityConfig {
                 .hasAuthority(UserAuthority.ADMIN.name())
                 .requestMatchers(workerEndpoints)
                 .hasAuthority(UserAuthority.WORKER.name())
-                .requestMatchers(permittedEndpoints)
-                .permitAll()
-                .anyRequest()
+                .requestMatchers(authenticatedEndpoints)
                 .authenticated()
+                .anyRequest()
+                .permitAll()
                 .and()
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
