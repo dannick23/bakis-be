@@ -11,7 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "https://bakis-fe.herokuapp.com/")
+@CrossOrigin(origins = "https://bakis-fe.herokuapp.com")
 @RequestMapping("system/")
 public class SystemResource {
     private final SystemService systemService;

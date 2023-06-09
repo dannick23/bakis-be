@@ -7,7 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin(origins = "https://bakis-fe.herokuapp.com/")
+@CrossOrigin(origins = "https://bakis-fe.herokuapp.com")
 @RequestMapping("worker/")
 @RequiredArgsConstructor
 public class WorkerResource {
